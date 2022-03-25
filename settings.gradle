@@ -1,3 +1,4 @@
+include ':skin'
 include ':skinlibrary'
 include ':app'
 rootProject.name = "Androud_Skin_Update"
