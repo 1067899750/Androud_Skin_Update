@@ -12,7 +12,9 @@ import com.example.skinlibrary.utils.SkinResources;
 import java.lang.reflect.Method;
 import java.util.Observable;
 
-
+/**
+ * 换肤管理类
+ */
 public class SkinManager extends Observable {
 
     private volatile static SkinManager instance;

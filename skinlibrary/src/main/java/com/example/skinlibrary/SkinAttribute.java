@@ -78,8 +78,8 @@ public class SkinAttribute {
     }
 
 
-    /*
-       对所有的view中的所有的属性进行皮肤修改
+    /**
+     * 对所有的view中的所有的属性进行皮肤修改
      */
     public void applySkin() {
         for (SkinView mSkinView : mSkinViews) {
@@ -87,6 +87,9 @@ public class SkinAttribute {
         }
     }
 
+    /**
+     * 对 View 属性的封装
+     */
     static class SkinView {
         View view;
         //这个View的能被 换肤的属性与它对应的id 集合

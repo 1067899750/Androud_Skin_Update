@@ -15,6 +15,9 @@ import com.example.skinlibrary.utils.SkinThemeUtils;
 import java.lang.reflect.Field;
 import java.util.Observable;
 
+/**
+ * Activity 生命周期监控
+ */
 public class ApplicationActivityLifecycle implements Application.ActivityLifecycleCallbacks {
 
     private Observable mObserable;
