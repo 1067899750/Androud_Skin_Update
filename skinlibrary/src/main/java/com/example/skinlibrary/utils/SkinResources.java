@@ -70,9 +70,11 @@ public class SkinResources {
             //返回 app 的资源 id
             return resId;
         }
+        //通过原始app中的resId，找到 resName
         String resName = mAppResources.getResourceEntryName(resId);
+        //通过原始app中的resId，找到类型 layout\drawable
         String resType = mAppResources.getResourceTypeName(resId);
-        //资源包对应资源的 id
+        //获取皮肤包对应的资源 ID
         int skinId = mSkinResources.getIdentifier(resName, resType, mSkinPkgName);
         return skinId;
     }
