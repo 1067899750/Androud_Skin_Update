@@ -19,6 +19,8 @@ import java.io.InputStream;
 public class SkinActivity extends Activity {
 
 
+    private String path;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +31,7 @@ public class SkinActivity extends Activity {
 //        Resources resources = getResources();
 //        new Resources()
         ///storage/emulated/0/Android/data/com.example.androud_skin_update/files
-        String path = getCacheDir().getPath();
+        path = getExternalFilesDir(null).getPath();
         try {
             InputStream inputStream = getAssets().open("skin-debug.apk");
 
@@ -62,7 +64,6 @@ public class SkinActivity extends Activity {
 
     public void change(View view) {
         //换肤，收包裹，皮肤包是独立的apk包，可以来自网络下载
-        String path = getCacheDir().getPath();
         SkinManager.getInstance().loadSkin(path + "/skin/skin-debug.apk");
     }
 
