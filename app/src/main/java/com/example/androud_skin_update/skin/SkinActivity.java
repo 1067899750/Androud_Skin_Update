@@ -31,15 +31,19 @@ public class SkinActivity extends Activity {
         ///storage/emulated/0/Android/data/com.example.androud_skin_update/files
         String path = getCacheDir().getPath();
         try {
-            InputStream inputStream = getAssets().open("skin-debug.aar");
+            InputStream inputStream = getAssets().open("skin-debug.apk");
 
-            File file = new File(path, "skin-debug.aar");
-            if (file.exists()){
-                file.delete();
+            File file = new File(path, "skin");
+            if (!file.exists()){
+                file.mkdirs();
             }
-            file.createNewFile();
+            File apkFile = new File(file, "skin-debug.apk");
+            if (apkFile.exists()){
+                apkFile.delete();
+            }
+            apkFile.createNewFile();
 
-            FileOutputStream fos = new FileOutputStream(file);
+            FileOutputStream fos = new FileOutputStream(apkFile);
             BufferedOutputStream bos = new BufferedOutputStream(fos);
 
             byte[] bytes = new byte[2048];
@@ -59,7 +63,7 @@ public class SkinActivity extends Activity {
     public void change(View view) {
         //换肤，收包裹，皮肤包是独立的apk包，可以来自网络下载
         String path = getCacheDir().getPath();
-        SkinManager.getInstance().loadSkin(path + "/skin-debug.aar");
+        SkinManager.getInstance().loadSkin(path + "/skin/skin-debug.apk");
     }
 
     public void restore(View view) {

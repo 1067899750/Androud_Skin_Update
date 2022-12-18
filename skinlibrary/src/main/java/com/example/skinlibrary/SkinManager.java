@@ -89,7 +89,7 @@ public class SkinManager extends Observable {
                 PackageManager mPm = mContext.getPackageManager();
                 PackageInfo info = mPm.getPackageArchiveInfo(skinPath, PackageManager
                         .GET_ACTIVITIES);
-                String packageName = "com.example.skinlibrary";
+                String packageName = info.packageName;
                 SkinResources.getInstance().applySkin(skinResource, packageName);
 
                 //记录
