@@ -1,4 +1,4 @@
-package com.example.androud_skin_update.skin.fragment;
+package com.example.androud_skin_update.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,14 +10,18 @@ import androidx.fragment.app.Fragment;
 
 import com.example.androud_skin_update.R;
 
-
-public class VideoFragment extends Fragment {
+public class MusicFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable
             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_video, container, false);
+        return inflater.inflate(R.layout.fragment_music, container, false);
+    }
+
+    @Override
+    public LayoutInflater onGetLayoutInflater(Bundle savedInstanceState) {
+        return super.onGetLayoutInflater(savedInstanceState);
     }
 }
 

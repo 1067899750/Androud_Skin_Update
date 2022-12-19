@@ -1,4 +1,4 @@
-package com.example.androud_skin_update.skin.widget;
+package com.example.androud_skin_update.widget;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -9,7 +9,6 @@ import com.example.androud_skin_update.R;
 import com.example.skinlibrary.SkinViewSupport;
 import com.example.skinlibrary.utils.SkinResources;
 import com.google.android.material.tabs.TabLayout;
-
 
 public class MyTabLayout extends TabLayout implements SkinViewSupport {
     int tabIndicatorColorResId;

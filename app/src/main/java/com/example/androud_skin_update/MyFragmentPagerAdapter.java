@@ -1,11 +1,10 @@
-package com.example.androud_skin_update.skin;
+package com.example.androud_skin_update;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.List;
-
 
 public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 

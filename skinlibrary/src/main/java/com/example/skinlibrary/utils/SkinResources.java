@@ -6,16 +6,9 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 
-/**
- * @author puyantao
- * @description : 资源类
- * @date 2022/3/25
- */
 public class SkinResources {
-    private volatile static SkinResources mInstance;
-    //资源包路径
+
     private String mSkinPkgName;
-    //是否使用默认皮肤
     private boolean isDefaultSkin = true;
 
     // app原始的resource
@@ -23,37 +16,33 @@ public class SkinResources {
     // 皮肤包的resource
     private Resources mSkinResources;
 
-    public SkinResources(Context context) {
-        this.mAppResources = context.getResources();
+    private SkinResources(Context context) {
+        mAppResources = context.getResources();
     }
 
+    //单例
+    private volatile static SkinResources instance;
+
     public static void init(Context context) {
-        if (mInstance == null) {
+        if (instance == null) {
             synchronized (SkinResources.class) {
-                if (mInstance == null) {
-                    mInstance = new SkinResources(context);
+                if (instance == null) {
+                    instance = new SkinResources(context);
                 }
             }
         }
     }
 
     public static SkinResources getInstance() {
-        return mInstance;
+        return instance;
     }
 
-    /**
-     * 重置换肤资源
-     */
     public void reset() {
         mSkinResources = null;
         mSkinPkgName = "";
         isDefaultSkin = true;
     }
 
-    /**
-     * @param resources 皮肤包资源
-     * @param pkgName   皮肤包路径
-     */
     public void applySkin(Resources resources, String pkgName) {
         mSkinResources = resources;
         mSkinPkgName = pkgName;
@@ -67,14 +56,10 @@ public class SkinResources {
      */
     public int getIdentifier(int resId) {
         if (isDefaultSkin) {
-            //返回 app 的资源 id
             return resId;
         }
-        //通过原始app中的resId，找到 resName
         String resName = mAppResources.getResourceEntryName(resId);
-        //通过原始app中的resId，找到类型 layout\drawable
         String resType = mAppResources.getResourceTypeName(resId);
-        //获取皮肤包对应的资源 ID
         int skinId = mSkinResources.getIdentifier(resName, resType, mSkinPkgName);
         return skinId;
     }
@@ -93,7 +78,7 @@ public class SkinResources {
         if (skinId == 0) {
             return mAppResources.getColor(resId);
         }
-        return mSkinResources.getColor(resId);
+        return mSkinResources.getColor(skinId);
     }
 
     public ColorStateList getColorStateList(int resId) {
@@ -107,7 +92,6 @@ public class SkinResources {
         return mSkinResources.getColorStateList(skinId);
     }
 
-
     public Drawable getDrawable(int resId) {
         if (isDefaultSkin) {
             return mAppResources.getDrawable(resId);
@@ -118,7 +102,7 @@ public class SkinResources {
         if (skinId == 0) {
             return mAppResources.getDrawable(resId);
         }
-        return mSkinResources.getDrawable(resId);
+        return mSkinResources.getDrawable(skinId);
     }
 
 
@@ -137,10 +121,5 @@ public class SkinResources {
             return getDrawable(resId);
         }
     }
+
 }
-
-
-
-
-
-

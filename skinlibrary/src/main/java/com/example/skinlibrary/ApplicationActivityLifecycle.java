@@ -3,25 +3,21 @@ package com.example.skinlibrary;
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
-
 import android.util.ArrayMap;
 import android.view.LayoutInflater;
 
 import androidx.core.view.LayoutInflaterCompat;
-
 
 import com.example.skinlibrary.utils.SkinThemeUtils;
 
 import java.lang.reflect.Field;
 import java.util.Observable;
 
-/**
- * Activity 生命周期监控
- */
 public class ApplicationActivityLifecycle implements Application.ActivityLifecycleCallbacks {
 
     private Observable mObserable;
-    private ArrayMap<Activity, SkinLayoutInflaterFactory> mLayoutInflaterFactories = new ArrayMap<>();
+    private ArrayMap<Activity, SkinLayoutInflaterFactory> mLayoutInflaterFactories = new
+            ArrayMap<>();
 
     public ApplicationActivityLifecycle(Observable observable) {
         mObserable = observable;
@@ -41,10 +37,9 @@ public class ApplicationActivityLifecycle implements Application.ActivityLifecyc
         LayoutInflater layoutInflater = activity.getLayoutInflater();
 
         try {
-            //Android 布局加载器 使用 mFactorySet 标记是否设置过 Factory
+            //Android 布局加载器 使用 mFactorySet 标记是否设置过Factory
             //如设置过抛出一次
             //设置 mFactorySet 标签为false
-            //版本 > 28，此属性不能反射
             Field field = LayoutInflater.class.getDeclaredField("mFactorySet");
             field.setAccessible(true);
             field.setBoolean(layoutInflater, false);

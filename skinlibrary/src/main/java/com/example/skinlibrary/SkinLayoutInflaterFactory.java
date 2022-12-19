@@ -5,7 +5,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-
 import com.example.skinlibrary.utils.SkinThemeUtils;
 
 import java.lang.reflect.Constructor;
@@ -28,7 +27,7 @@ public class SkinLayoutInflaterFactory implements LayoutInflater.Factory2, Obser
     //记录对应VIEW的构造函数
     private static final Class<?>[] mConstructorSignature = new Class[] {
             Context.class, AttributeSet.class};
-    
+
     private static final HashMap<String, Constructor<? extends View>> mConstructorMap =
             new HashMap<String, Constructor<? extends View>>();
 

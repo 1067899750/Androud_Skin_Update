@@ -3,7 +3,6 @@ package com.example.skinlibrary;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-
 public class SkinPreference {
     private static final String SKIN_SHARED = "skins";
     private static final String KEY_SKIN_PATH = "skin-path";
