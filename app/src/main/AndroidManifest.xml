@@ -20,8 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SkinActivity" />
+        <activity android:name=".skin1.Skin1MainActivity" />
+        <activity android:name=".skin1.SkinActivity" />
     </application>
 
 </manifest>

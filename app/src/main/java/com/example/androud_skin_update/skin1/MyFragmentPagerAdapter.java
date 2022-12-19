@@ -1,4 +1,4 @@
-package com.example.androud_skin_update;
+package com.example.androud_skin_update.skin1;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;

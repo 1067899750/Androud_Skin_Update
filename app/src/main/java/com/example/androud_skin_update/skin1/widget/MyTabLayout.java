@@ -1,4 +1,4 @@
-package com.example.androud_skin_update.widget;
+package com.example.androud_skin_update.skin1.widget;
 
 import android.content.Context;
 import android.content.res.ColorStateList;

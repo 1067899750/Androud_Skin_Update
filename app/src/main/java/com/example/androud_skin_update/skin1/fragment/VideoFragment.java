@@ -1,4 +1,4 @@
-package com.example.androud_skin_update.fragment;
+package com.example.androud_skin_update.skin1.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

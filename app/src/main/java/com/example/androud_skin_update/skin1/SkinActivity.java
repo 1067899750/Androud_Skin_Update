@@ -1,4 +1,4 @@
-package com.example.androud_skin_update;
+package com.example.androud_skin_update.skin1;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import com.example.androud_skin_update.R;
 import com.example.skinlibrary.SkinManager;
 
 import java.io.BufferedOutputStream;
